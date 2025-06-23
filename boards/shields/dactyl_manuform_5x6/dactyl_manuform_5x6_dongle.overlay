@@ -40,25 +40,29 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5)                   RC(3,11) RC(3,
         display-name = "Default Layout";
         transform = <&default_transform>;
     };
-    &i2c0 {
+
+
+&i2c0 {
     compatible = "nordic,nrf-twi";
-    sda-pin = <15>;  // P0.15 (D1)
-    scl-pin = <17>;  // P0.17 (D0)
+    sda-pin = <15>; // P0.15
+    scl-pin = <17>; // P0.17
     status = "okay";
 
-    sh1106: sh1106@3c {  // Адрес I2C (обычно 0x3C или 0x3D)
-        compatible = "sinowealth,sh1106";
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
-        height = <64>;
+        height = <32>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <63>;
-        prechargep = <0x22>;
-        com-invdir;
+        multiplex-ratio = <31>;
         segment-remap;
-        };
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
     };
+};
+
 };
 
