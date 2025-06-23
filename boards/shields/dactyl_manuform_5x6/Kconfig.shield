@@ -3,3 +3,6 @@ config SHIELD_DACTYL_MANUFORM_5x6_LEFT
 
 config SHIELD_DACTYL_MANUFORM_5x6_RIGHT
     def_bool $(shields_list_contains,dactyl_manuform_5x6_right)
+#  DACTYL_MANUFORM_5x6
+config SHIELD_DACTYL_MANUFORM_5x6_DONGLE
+    def_bool $(shields_list_contains,dactyl_manuform_5x6_dongle)
