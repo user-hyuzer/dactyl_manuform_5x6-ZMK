@@ -5,6 +5,7 @@
         zmk,battery = &vbatt;
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
+        zmk,display = &sh1106;  // Ссылка на ноду sh1106
     };
     vbatt: vbatt {
         compatible = "zmk,battery-nrf-vddh";
